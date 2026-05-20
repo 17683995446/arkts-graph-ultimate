@@ -31,7 +31,7 @@ class ArkAnalyzerIntegration:
 
         for cls_data in data.get('classes', []):
             old_id = cls_data['id']
-            file_id = file_id_map.get(cls_data.get('file_id'))
+            file_id = file_id_map.get(cls_data.get('fileId') or cls_data.get('file_id'))
             cursor = self.db._get_connection().execute(
                 "INSERT INTO classes (name, file_id, flags) VALUES (?, ?, ?)",
                 (cls_data['name'], file_id, 0)
@@ -40,7 +40,7 @@ class ArkAnalyzerIntegration:
 
         for method_data in data.get('methods', []):
             old_id = method_data['id']
-            old_class_id = method_data.get('class_id')
+            old_class_id = method_data.get('classId') or method_data.get('class_id')
             new_class_id = class_id_map.get(old_class_id) if old_class_id is not None else None
             cursor = self.db._get_connection().execute(
                 "INSERT INTO methods (name, class_id) VALUES (?, ?)",
@@ -62,30 +62,16 @@ class ArkAnalyzerIntegration:
         for call_data in data.get('calls', []):
             try:
                 # 尝试多种可能的字段名
-                caller_method = call_data.get('callerMethod') or call_data.get('callerId')
-                callee_method = call_data.get('calleeMethod') or call_data.get('calleeId')
-                
-                # 如果是方法名，转换为ID
-                if isinstance(caller_method, str):
-                    # 尝试多种匹配方式
-                    caller_id = (
-                        method_name_to_id.get(caller_method) or
-                        method_name_to_id.get(f"Global::{caller_method}") or
-                        method_name_to_id.get(f"BaseClass::{caller_method}") or
-                        method_name_to_id.get(f"BaseService::{caller_method}")
-                    )
-                else:
-                    caller_id = method_id_map.get(caller_method)
-                
-                if isinstance(callee_method, str):
-                    callee_id = (
-                        method_name_to_id.get(callee_method) or
-                        method_name_to_id.get(f"Global::{callee_method}") or
-                        method_name_to_id.get(f"BaseClass::{callee_method}") or
-                        method_name_to_id.get(f"BaseService::{callee_method}")
-                    )
-                else:
-                    callee_id = method_id_map.get(callee_method)
+                caller_id = method_id_map.get(
+                    call_data.get('callerId') or 
+                    call_data.get('caller_id') or 
+                    call_data.get('callerMethod')
+                )
+                callee_id = method_id_map.get(
+                    call_data.get('calleeId') or 
+                    call_data.get('callee_id') or 
+                    call_data.get('calleeMethod')
+                )
                 
                 if caller_id is not None and callee_id is not None:
                     self.db._get_connection().execute(
@@ -97,11 +83,17 @@ class ArkAnalyzerIntegration:
 
         for comp_data in data.get('components', []):
             try:
-                old_parent_id = comp_data.get('parentId')
-                old_child_id = comp_data.get('childId')
-                new_parent_id = class_id_map.get(old_parent_id) if old_parent_id else 0
+                old_parent_id = (
+                    comp_data.get('parentId') or 
+                    comp_data.get('parent_id')
+                )
+                old_child_id = (
+                    comp_data.get('childId') or 
+                    comp_data.get('child_id')
+                )
+                new_parent_id = class_id_map.get(old_parent_id)
                 new_child_id = class_id_map.get(old_child_id)
-                if new_child_id is not None:
+                if new_parent_id is not None and new_child_id is not None:
                     self.db._get_connection().execute(
                         "INSERT OR IGNORE INTO components (parent_id, child_id) VALUES (?, ?)",
                         (new_parent_id, new_child_id)
