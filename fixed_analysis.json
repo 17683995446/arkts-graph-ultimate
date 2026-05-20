@@ -1,0 +1,170 @@
+{
+  "files": [
+    {
+      "id": 0,
+      "path": "/workspace/sample_project/App.ets",
+      "hash": "4d4ace71"
+    },
+    {
+      "id": 1,
+      "path": "/workspace/sample_project/Utils.ets",
+      "hash": "3705ec5d"
+    }
+  ],
+  "classes": [
+    {
+      "id": 0,
+      "name": "App",
+      "fileId": 0,
+      "type": "struct"
+    },
+    {
+      "id": 1,
+      "name": "Counter",
+      "fileId": 0,
+      "type": "struct"
+    },
+    {
+      "id": 2,
+      "name": "MathUtils",
+      "fileId": 1,
+      "type": "class"
+    },
+    {
+      "id": 3,
+      "name": "StringUtils",
+      "fileId": 1,
+      "type": "class"
+    }
+  ],
+  "methods": [
+    {
+      "id": 0,
+      "name": "App::build",
+      "shortName": "build",
+      "classId": 0
+    },
+    {
+      "id": 1,
+      "name": "Counter::build",
+      "shortName": "build",
+      "classId": 1
+    },
+    {
+      "id": 2,
+      "name": "MathUtils::add",
+      "shortName": "add",
+      "classId": 2
+    },
+    {
+      "id": 3,
+      "name": "MathUtils::multiply",
+      "shortName": "multiply",
+      "classId": 2
+    },
+    {
+      "id": 4,
+      "name": "StringUtils::capitalize",
+      "shortName": "capitalize",
+      "classId": 3
+    },
+    {
+      "id": 5,
+      "name": "StringUtils::truncate",
+      "shortName": "truncate",
+      "classId": 3
+    }
+  ],
+  "calls": [
+    {
+      "callerId": 0,
+      "calleeId": 0
+    },
+    {
+      "callerId": 0,
+      "calleeId": 1
+    },
+    {
+      "callerId": 1,
+      "calleeId": 0
+    },
+    {
+      "callerId": 1,
+      "calleeId": 1
+    },
+    {
+      "callerId": 2,
+      "calleeId": 2
+    },
+    {
+      "callerId": 2,
+      "calleeId": 3
+    },
+    {
+      "callerId": 2,
+      "calleeId": 4
+    },
+    {
+      "callerId": 2,
+      "calleeId": 5
+    },
+    {
+      "callerId": 3,
+      "calleeId": 2
+    },
+    {
+      "callerId": 3,
+      "calleeId": 3
+    },
+    {
+      "callerId": 3,
+      "calleeId": 4
+    },
+    {
+      "callerId": 3,
+      "calleeId": 5
+    },
+    {
+      "callerId": 4,
+      "calleeId": 2
+    },
+    {
+      "callerId": 4,
+      "calleeId": 3
+    },
+    {
+      "callerId": 4,
+      "calleeId": 4
+    },
+    {
+      "callerId": 4,
+      "calleeId": 5
+    },
+    {
+      "callerId": 5,
+      "calleeId": 2
+    },
+    {
+      "callerId": 5,
+      "calleeId": 3
+    },
+    {
+      "callerId": 5,
+      "calleeId": 4
+    },
+    {
+      "callerId": 5,
+      "calleeId": 5
+    }
+  ],
+  "components": [
+    {
+      "parentId": 0,
+      "childId": 1
+    },
+    {
+      "parentId": 2,
+      "childId": 3
+    }
+  ]
+}
