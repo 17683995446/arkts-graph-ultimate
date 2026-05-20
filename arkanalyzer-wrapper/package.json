@@ -1,0 +1,12 @@
+{
+  "name": "arkts-graph-arkanalyzer",
+  "version": "1.0.0",
+  "description": "Integration layer for ArkAnalyzer to SQLite knowledge graph",
+  "scripts": {
+    "setup": "npm install",
+    "analyze": "node src/cli.js"
+  },
+  "dependencies": {
+    "typescript": "^5.3.0"
+  }
+}

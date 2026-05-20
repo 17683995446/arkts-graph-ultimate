@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArkTS 知识图谱 - 实时代码分析</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ArkTS 知识图谱</h1>
+            <p>实时代码分析与可视化系统</p>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>文件</h3>
+                <div class="value" id="stat-files">{{ stats.files }}</div>
+            </div>
+            <div class="stat-card">
+                <h3>类</h3>
+                <div class="value" id="stat-classes">{{ stats.classes }}</div>
+            </div>
+            <div class="stat-card">
+                <h3>方法</h3>
+                <div class="value" id="stat-methods">{{ stats.methods }}</div>
+            </div>
+            <div class="stat-card">
+                <h3>调用关系</h3>
+                <div class="value" id="stat-calls">{{ stats.calls }}</div>
+            </div>
+            <div class="stat-card">
+                <h3>组件关系</h3>
+                <div class="value" id="stat-components">{{ stats.components }}</div>
+            </div>
+        </div>
+
+        <div class="graph-section">
+            <div class="graph-tabs">
+                <button class="active" data-graph="calls">调用关系图</button>
+                <button data-graph="components">组件关系图</button>
+            </div>
+            <div id="graph-container"></div>
+        </div>
+
+        <div class="entities-section">
+            <div class="entity-card">
+                <h2>类</h2>
+                <div class="entity-list" id="classes-list"></div>
+            </div>
+            <div class="entity-card">
+                <h2>方法</h2>
+                <div class="entity-list" id="methods-list"></div>
+            </div>
+        </div>
+
+        <button class="refresh-btn" id="refresh-btn">🔄</button>
+    </div>
+
+    <script>
+        let currentGraphType = 'calls';
+        let classes = [];
+        let methods = [];
+
+        async function fetchData() {
+            const [statsRes, classesRes, methodsRes, callsRes, componentsRes] = await Promise.all([
+                fetch('/api/stats'),
+                fetch('/api/classes'),
+                fetch('/api/methods'),
+                fetch('/api/graph/calls'),
+                fetch('/api/graph/components')
+            ]);
+
+            const stats = await statsRes.json();
+            classes = await classesRes.json();
+            methods = await methodsRes.json();
+            const calls = await callsRes.json();
+            const components = await componentsRes.json();
+
+            document.getElementById('stat-files').textContent = stats.files;
+            document.getElementById('stat-classes').textContent = stats.classes;
+            document.getElementById('stat-methods').textContent = stats.methods;
+            document.getElementById('stat-calls').textContent = stats.calls;
+            document.getElementById('stat-components').textContent = stats.components;
+
+            renderClasses();
+            renderMethods();
+            renderGraph(calls, components);
+        }
+
+        function renderClasses() {
+            const list = document.getElementById('classes-list');
+            list.innerHTML = classes.map(c => `
+                <div class="entity-item">
+                    <div class="name">${c.name}</div>
+                    <div class="meta">ID: ${c.id}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderMethods() {
+            const list = document.getElementById('methods-list');
+            list.innerHTML = methods.map(m => `
+                <div class="entity-item">
+                    <div class="name">${m.name}</div>
+                    <div class="meta">Class ID: ${m.class_id}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderGraph(calls, components) {
+            const container = document.getElementById('graph-container');
+            container.innerHTML = '';
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+
+            const svg = d3.select(container)
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+
+            const links = currentGraphType === 'calls' ? calls : components;
+            const nodesMap = new Map();
+            links.forEach(l => {
+                nodesMap.set(l.source, { id: l.source });
+                nodesMap.set(l.target, { id: l.target });
+            });
+            const nodes = Array.from(nodesMap.values());
+
+            const color = d3.scaleOrdinal(d3.schemeCategory10);
+
+            const simulation = d3.forceSimulation(nodes)
+                .force('link', d3.forceLink(links).id(d => d.id).distance(100))
+                .force('charge', d3.forceManyBody().strength(-300))
+                .force('center', d3.forceCenter(width / 2, height / 2))
+                .force('collision', d3.forceCollide().radius(30));
+
+            const link = svg.append('g')
+                .selectAll('line')
+                .data(links)
+                .join('line')
+                .attr('stroke', '#999')
+                .attr('stroke-opacity', 0.6)
+                .attr('stroke-width', 1.5);
+
+            const node = svg.append('g')
+                .selectAll('circle')
+                .data(nodes)
+                .join('circle')
+                .attr('r', 8)
+                .attr('fill', d => color(d.id % 10))
+                .call(drag(simulation));
+
+            const label = svg.append('g')
+                .selectAll('text')
+                .data(nodes)
+                .join('text')
+                .text(d => d.id)
+                .attr('font-size', '10px')
+                .attr('dx', 12)
+                .attr('dy', 4);
+
+            simulation.on('tick', () => {
+                link
+                    .attr('x1', d => d.source.x)
+                    .attr('y1', d => d.source.y)
+                    .attr('x2', d => d.target.x)
+                    .attr('y2', d => d.target.y);
+                node
+                    .attr('cx', d => d.x)
+                    .attr('cy', d => d.y);
+                label
+                    .attr('x', d => d.x)
+                    .attr('y', d => d.y);
+            });
+        }
+
+        function drag(simulation) {
+            function dragstarted(event) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                event.subject.fx = event.subject.x;
+                event.subject.fy = event.subject.y;
+            }
+            function dragged(event) {
+                event.subject.fx = event.x;
+                event.subject.fy = event.y;
+            }
+            function dragended(event) {
+                if (!event.active) simulation.alphaTarget(0);
+                event.subject.fx = null;
+                event.subject.fy = null;
+            }
+            return d3.drag()
+                .on('start', dragstarted)
+                .on('drag', dragged)
+                .on('end', dragended);
+        }
+
+        document.querySelectorAll('.graph-tabs button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.graph-tabs button').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentGraphType = btn.dataset.graph;
+                fetchData();
+            });
+        });
+
+        document.getElementById('refresh-btn').addEventListener('click', fetchData);
+        setInterval(fetchData, 5000);
+        fetchData();
+    </script>
+</body>
+</html>

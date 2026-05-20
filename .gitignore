@@ -1,0 +1,36 @@
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+build/
+out/
+target/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test temporary files
+*-analysis.json
+*-test-report.json
+chaos-analysis-result.json
+
+# Generated large test projects (optional, but keeping small ones)
+realistic_test_project/
+massive_test_project/
+
+# Cache
+.cache/
+*.log
+
+# Temp files
+tmp/
+temp/
