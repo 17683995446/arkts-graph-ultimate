@@ -1,0 +1,11 @@
+{
+  "name": "extreme-chaos-test",
+  "version": "1.0.0",
+  "description": "超大规模混乱测试项目",
+  "main": "index.ets",
+  "author": "Test Generator",
+  "files": 50,
+  "classes": 519,
+  "methods": 7293,
+  "calls": 54737
+}

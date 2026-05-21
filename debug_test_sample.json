@@ -1,0 +1,861 @@
+{
+  "metadata": {
+    "generatedAt": "2026-05-20T23:36:35.523Z",
+    "projectPath": "/workspace/sample_project"
+  },
+  "results": {
+    "files": [
+      {
+        "id": 0,
+        "path": "/workspace/sample_project/App.ets",
+        "hash": "4d4ace71"
+      },
+      {
+        "id": 1,
+        "path": "/workspace/sample_project/Utils.ets",
+        "hash": "3705ec5d"
+      }
+    ],
+    "classes": [
+      {
+        "id": 0,
+        "name": "App",
+        "fileId": 0,
+        "type": "struct"
+      },
+      {
+        "id": 1,
+        "name": "Counter",
+        "fileId": 0,
+        "type": "struct"
+      },
+      {
+        "id": 2,
+        "name": "MathUtils",
+        "fileId": 1,
+        "type": "class"
+      },
+      {
+        "id": 3,
+        "name": "StringUtils",
+        "fileId": 1,
+        "type": "class"
+      }
+    ],
+    "methods": [
+      {
+        "id": 0,
+        "name": "App::build",
+        "shortName": "build",
+        "classId": 0
+      },
+      {
+        "id": 1,
+        "name": "App::Column",
+        "shortName": "Column",
+        "classId": 0
+      },
+      {
+        "id": 2,
+        "name": "Counter::build",
+        "shortName": "build",
+        "classId": 1
+      },
+      {
+        "id": 3,
+        "name": "Counter::Row",
+        "shortName": "Row",
+        "classId": 1
+      },
+      {
+        "id": 4,
+        "name": "MathUtils::add",
+        "shortName": "add",
+        "classId": 2
+      },
+      {
+        "id": 5,
+        "name": "MathUtils::multiply",
+        "shortName": "multiply",
+        "classId": 2
+      },
+      {
+        "id": 6,
+        "name": "StringUtils::capitalize",
+        "shortName": "capitalize",
+        "classId": 3
+      },
+      {
+        "id": 7,
+        "name": "StringUtils::truncate",
+        "shortName": "truncate",
+        "classId": 3
+      }
+    ],
+    "calls": [
+      {
+        "callerId": 0,
+        "calleeId": 0
+      },
+      {
+        "callerId": 0,
+        "calleeId": 2
+      },
+      {
+        "callerId": 0,
+        "calleeId": 1
+      },
+      {
+        "callerId": 0,
+        "calleeId": 3
+      },
+      {
+        "callerId": 1,
+        "calleeId": 0
+      },
+      {
+        "callerId": 1,
+        "calleeId": 2
+      },
+      {
+        "callerId": 1,
+        "calleeId": 1
+      },
+      {
+        "callerId": 1,
+        "calleeId": 3
+      },
+      {
+        "callerId": 2,
+        "calleeId": 0
+      },
+      {
+        "callerId": 2,
+        "calleeId": 2
+      },
+      {
+        "callerId": 2,
+        "calleeId": 1
+      },
+      {
+        "callerId": 2,
+        "calleeId": 3
+      },
+      {
+        "callerId": 3,
+        "calleeId": 0
+      },
+      {
+        "callerId": 3,
+        "calleeId": 2
+      },
+      {
+        "callerId": 3,
+        "calleeId": 1
+      },
+      {
+        "callerId": 3,
+        "calleeId": 3
+      },
+      {
+        "callerId": 4,
+        "calleeId": 4
+      },
+      {
+        "callerId": 4,
+        "calleeId": 5
+      },
+      {
+        "callerId": 4,
+        "calleeId": 6
+      },
+      {
+        "callerId": 4,
+        "calleeId": 7
+      },
+      {
+        "callerId": 5,
+        "calleeId": 4
+      },
+      {
+        "callerId": 5,
+        "calleeId": 5
+      },
+      {
+        "callerId": 5,
+        "calleeId": 6
+      },
+      {
+        "callerId": 5,
+        "calleeId": 7
+      },
+      {
+        "callerId": 6,
+        "calleeId": 4
+      },
+      {
+        "callerId": 6,
+        "calleeId": 5
+      },
+      {
+        "callerId": 6,
+        "calleeId": 6
+      },
+      {
+        "callerId": 6,
+        "calleeId": 7
+      },
+      {
+        "callerId": 7,
+        "calleeId": 4
+      },
+      {
+        "callerId": 7,
+        "calleeId": 5
+      },
+      {
+        "callerId": 7,
+        "calleeId": 6
+      },
+      {
+        "callerId": 7,
+        "calleeId": 7
+      }
+    ],
+    "components": [
+      {
+        "parentId": 0,
+        "childId": 1
+      },
+      {
+        "parentId": 2,
+        "childId": 3
+      }
+    ]
+  },
+  "stats": {
+    "files": 2,
+    "classes": 4,
+    "methods": 8,
+    "calls": 32,
+    "components": 2,
+    "warnings": 0,
+    "errors": 0
+  },
+  "warnings": [],
+  "errors": [],
+  "logs": [
+    {
+      "timestamp": "2026-05-20T23:36:35.518Z",
+      "message": "🚀 [Init] UltimateDebugAnalyzer 初始化",
+      "data": {
+        "projectPath": "/workspace/sample_project"
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.518Z",
+      "message": "📦 [Step 1/4] 开始提取实体",
+      "data": {
+        "step": 1
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.518Z",
+      "message": "📂 [extractEntities] 开始遍历目录",
+      "data": {
+        "dir": "/workspace/sample_project"
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.519Z",
+      "message": "📂 [scanDir] 正在读取",
+      "data": {
+        "dir": "/workspace/sample_project"
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.519Z",
+      "message": "📑 [scanDir] 找到 2 个文件/目录",
+      "data": null
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.519Z",
+      "message": "🔎 [scanDir] 处理 [1/2]",
+      "data": {
+        "filePath": "/workspace/sample_project/App.ets"
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.519Z",
+      "message": "🔍 [isValidCodeFile]",
+      "data": {
+        "filename": "App.ets",
+        "isValid": true
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.519Z",
+      "message": "📄 [scanDir] 处理代码文件",
+      "data": {
+        "file": "App.ets"
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.519Z",
+      "message": "🔬 [analyzeFile]",
+      "data": {
+        "filePath": "/workspace/sample_project/App.ets"
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.519Z",
+      "message": "📖 [analyzeFile] 文件读取成功",
+      "data": {
+        "size": 701
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.519Z",
+      "message": "🔑 [computeHash]",
+      "data": {
+        "hash": "4d4ace71"
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.519Z",
+      "message": "🔐 [analyzeFile] 计算文件哈希",
+      "data": {
+        "hash": "4d4ace71"
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.519Z",
+      "message": "✅ [analyzeFile] 文件加入结果",
+      "data": {
+        "fileId": 0,
+        "filesCount": 1
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.519Z",
+      "message": "📊 [analyzeFile] 开始提取类",
+      "data": {
+        "fileId": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.519Z",
+      "message": "📚 [extractClasses]",
+      "data": {
+        "fileId": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.519Z",
+      "message": "📚 [extractClasses] 发现类",
+      "data": {
+        "count": 1,
+        "classInfo": {
+          "id": 0,
+          "name": "App",
+          "fileId": 0,
+          "type": "struct"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.520Z",
+      "message": "📚 [extractClasses] 发现类",
+      "data": {
+        "count": 2,
+        "classInfo": {
+          "id": 1,
+          "name": "Counter",
+          "fileId": 0,
+          "type": "struct"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.520Z",
+      "message": "✅ [extractClasses] 完成",
+      "data": {
+        "total": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.520Z",
+      "message": "📊 [analyzeFile] 开始提取方法",
+      "data": {
+        "fileId": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.520Z",
+      "message": "🔧 [extractMethods] 从类中提取",
+      "data": {
+        "fileId": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.520Z",
+      "message": "🔧 [extractMethods] 找到类数量",
+      "data": {
+        "count": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.520Z",
+      "message": "🔧 [extractMethods] 处理类",
+      "data": {
+        "className": "App",
+        "contentLength": 207
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.520Z",
+      "message": "✅ [extractMethods] 添加方法",
+      "data": {
+        "methodName": "build",
+        "className": "App",
+        "methodId": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.520Z",
+      "message": "✅ [extractMethods] 添加方法",
+      "data": {
+        "methodName": "Column",
+        "className": "App",
+        "methodId": 1
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.520Z",
+      "message": "📊 [extractMethods] 类处理完成",
+      "data": {
+        "className": "App",
+        "methodCount": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.520Z",
+      "message": "🔧 [extractMethods] 处理类",
+      "data": {
+        "className": "Counter",
+        "contentLength": 476
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.520Z",
+      "message": "✅ [extractMethods] 添加方法",
+      "data": {
+        "methodName": "build",
+        "className": "Counter",
+        "methodId": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.520Z",
+      "message": "✅ [extractMethods] 添加方法",
+      "data": {
+        "methodName": "Row",
+        "className": "Counter",
+        "methodId": 3
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.520Z",
+      "message": "📊 [extractMethods] 类处理完成",
+      "data": {
+        "className": "Counter",
+        "methodCount": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.520Z",
+      "message": "🔧 [extractMethods] 提取全局方法",
+      "data": null
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "✅ [extractMethods] 全部完成",
+      "data": {
+        "globalMethodCount": 0,
+        "total": 4
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "🔎 [scanDir] 处理 [2/2]",
+      "data": {
+        "filePath": "/workspace/sample_project/Utils.ets"
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "🔍 [isValidCodeFile]",
+      "data": {
+        "filename": "Utils.ets",
+        "isValid": true
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "📄 [scanDir] 处理代码文件",
+      "data": {
+        "file": "Utils.ets"
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "🔬 [analyzeFile]",
+      "data": {
+        "filePath": "/workspace/sample_project/Utils.ets"
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "📖 [analyzeFile] 文件读取成功",
+      "data": {
+        "size": 475
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "🔑 [computeHash]",
+      "data": {
+        "hash": "3705ec5d"
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "🔐 [analyzeFile] 计算文件哈希",
+      "data": {
+        "hash": "3705ec5d"
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "✅ [analyzeFile] 文件加入结果",
+      "data": {
+        "fileId": 1,
+        "filesCount": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "📊 [analyzeFile] 开始提取类",
+      "data": {
+        "fileId": 1
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "📚 [extractClasses]",
+      "data": {
+        "fileId": 1
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "📚 [extractClasses] 发现类",
+      "data": {
+        "count": 1,
+        "classInfo": {
+          "id": 2,
+          "name": "MathUtils",
+          "fileId": 1,
+          "type": "class"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "📚 [extractClasses] 发现类",
+      "data": {
+        "count": 2,
+        "classInfo": {
+          "id": 3,
+          "name": "StringUtils",
+          "fileId": 1,
+          "type": "class"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "✅ [extractClasses] 完成",
+      "data": {
+        "total": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "📊 [analyzeFile] 开始提取方法",
+      "data": {
+        "fileId": 1
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "🔧 [extractMethods] 从类中提取",
+      "data": {
+        "fileId": 1
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "🔧 [extractMethods] 找到类数量",
+      "data": {
+        "count": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "🔧 [extractMethods] 处理类",
+      "data": {
+        "className": "MathUtils",
+        "contentLength": 182
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "✅ [extractMethods] 添加方法",
+      "data": {
+        "methodName": "add",
+        "className": "MathUtils",
+        "methodId": 4
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "✅ [extractMethods] 添加方法",
+      "data": {
+        "methodName": "multiply",
+        "className": "MathUtils",
+        "methodId": 5
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "📊 [extractMethods] 类处理完成",
+      "data": {
+        "className": "MathUtils",
+        "methodCount": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "🔧 [extractMethods] 处理类",
+      "data": {
+        "className": "StringUtils",
+        "contentLength": 293
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "✅ [extractMethods] 添加方法",
+      "data": {
+        "methodName": "capitalize",
+        "className": "StringUtils",
+        "methodId": 6
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "✅ [extractMethods] 添加方法",
+      "data": {
+        "methodName": "truncate",
+        "className": "StringUtils",
+        "methodId": 7
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "📊 [extractMethods] 类处理完成",
+      "data": {
+        "className": "StringUtils",
+        "methodCount": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "🔧 [extractMethods] 提取全局方法",
+      "data": null
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "✅ [extractMethods] 全部完成",
+      "data": {
+        "globalMethodCount": 0,
+        "total": 8
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "✅ [Step 1/4] 实体提取完成",
+      "data": {
+        "files": 2,
+        "classes": 4,
+        "methods": 8
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.521Z",
+      "message": "🔍 [Step 2/4] 构建索引",
+      "data": {
+        "step": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.522Z",
+      "message": "📇 [buildIndex] 开始构建",
+      "data": null
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.522Z",
+      "message": "📇 [buildIndex] 进度",
+      "data": {
+        "processed": 1,
+        "total": 8
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.522Z",
+      "message": "✅ [buildIndex] 索引构建完成",
+      "data": {
+        "uniqueShortNames": 7,
+        "totalMethods": 8
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.522Z",
+      "message": "✅ [Step 2/4] 索引构建完成",
+      "data": {
+        "indexedMethods": 7
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.522Z",
+      "message": "🔗 [Step 3/4] 识别调用关系",
+      "data": {
+        "step": 3
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.522Z",
+      "message": "🔗 [identifyCalls] 开始",
+      "data": null
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.522Z",
+      "message": "🔗 [identifyCalls] 处理文件数量",
+      "data": {
+        "count": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.522Z",
+      "message": "🔗 [identifyCalls] 处理文件",
+      "data": {
+        "fileIdx": 1,
+        "total": 2,
+        "filePath": "/workspace/sample_project/App.ets",
+        "methodsInFile": 4
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.522Z",
+      "message": "🔗 [identifyCalls] 处理文件",
+      "data": {
+        "fileIdx": 2,
+        "total": 2,
+        "filePath": "/workspace/sample_project/Utils.ets",
+        "methodsInFile": 4
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.522Z",
+      "message": "✅ [identifyCalls] 完成",
+      "data": {
+        "total": 32
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.522Z",
+      "message": "✅ [Step 3/4] 调用关系识别完成",
+      "data": {
+        "calls": 32
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.522Z",
+      "message": "🏗️  [Step 4/4] 识别组件关系",
+      "data": {
+        "step": 4
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.523Z",
+      "message": "🏗️  [identifyComponents] 开始",
+      "data": null
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.523Z",
+      "message": "🏗️  [identifyComponents] 找到组件类",
+      "data": {
+        "count": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.523Z",
+      "message": "🏗️  [identifyComponents] 按文件分析",
+      "data": {
+        "filesWithClasses": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.523Z",
+      "message": "🏗️  [identifyComponents] 添加组件类间关系",
+      "data": {
+        "components": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.523Z",
+      "message": "✅ [identifyComponents] 完成",
+      "data": {
+        "total": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.523Z",
+      "message": "✅ [Step 4/4] 组件关系识别完成",
+      "data": {
+        "components": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.523Z",
+      "message": "🎉 [Complete] 完整分析成功！",
+      "data": {
+        "totalFiles": 2,
+        "totalClasses": 4,
+        "totalMethods": 8,
+        "totalCalls": 32,
+        "totalComponents": 2,
+        "warnings": 0,
+        "errors": 0,
+        "totalLogs": 77
+      }
+    },
+    {
+      "timestamp": "2026-05-20T23:36:35.523Z",
+      "message": "💾 [exportToJSON] 保存结果",
+      "data": {
+        "outputPath": "/workspace/debug_test_sample.json"
+      }
+    }
+  ]
+}

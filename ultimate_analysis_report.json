@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-05-20T23:37:50.891Z",
+  "project": "EnterpriseApp",
+  "stats": {
+    "files": 121,
+    "classes": 270,
+    "methods": 2213,
+    "calls": 44260,
+    "components": 443
+  },
+  "issues": [
+    {
+      "type": "false_positive",
+      "severity": "critical",
+      "message": "ArkTS UI 组件被错误识别为方法",
+      "data": [
+        {
+          "method": "Component1::Column",
+          "className": "Component1",
+          "componentName": "Column"
+        },
+        {
+          "method": "Component10::Column",
+          "className": "Component10",
+          "componentName": "Column"
+        },
+        {
+          "method": "Component11::Column",
+          "className": "Component11",
+          "componentName": "Column"
+        },
+        {
+          "method": "Component12::Column",
+          "className": "Component12",
+          "componentName": "Column"
+        },
+        {
+          "method": "Component13::Column",
+          "className": "Component13",
+          "componentName": "Column"
+        },
+        {
+          "method": "Component14::Column",
+          "className": "Component14",
+          "componentName": "Column"
+        },
+        {
+          "method": "Component15::Column",
+          "className": "Component15",
+          "componentName": "Column"
+        },
+        {
+          "method": "Component2::Column",
+          "className": "Component2",
+          "componentName": "Column"
+        },
+        {
+          "method": "Component3::Column",
+          "className": "Component3",
+          "componentName": "Column"
+        },
+        {
+          "method": "Component4::Column",
+          "className": "Component4",
+          "componentName": "Column"
+        }
+      ]
+    }
+  ]
+}

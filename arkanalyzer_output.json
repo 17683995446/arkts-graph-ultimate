@@ -1,0 +1,84 @@
+{
+  "files": [
+    {
+      "id": 0,
+      "path": "/workspace/sample_project/App.ets",
+      "hash": "9ecdb2b5c5415d66182859c1cf25693b"
+    },
+    {
+      "id": 1,
+      "path": "/workspace/sample_project/Utils.ets",
+      "hash": "266546b8619ada381b93a332a6024292"
+    }
+  ],
+  "classes": [
+    {
+      "id": 0,
+      "name": "App",
+      "fileId": 0,
+      "type": "class"
+    },
+    {
+      "id": 0,
+      "name": "Counter",
+      "fileId": 0,
+      "type": "class"
+    },
+    {
+      "id": 2,
+      "name": "MathUtils",
+      "fileId": 1,
+      "type": "class"
+    },
+    {
+      "id": 2,
+      "name": "StringUtils",
+      "fileId": 1,
+      "type": "class"
+    }
+  ],
+  "methods": [
+    {
+      "id": 0,
+      "name": "Counter::build",
+      "classId": null
+    },
+    {
+      "id": 0,
+      "name": "Counter::Column",
+      "classId": null
+    },
+    {
+      "id": 0,
+      "name": "Counter::build",
+      "classId": null
+    },
+    {
+      "id": 0,
+      "name": "Counter::Row",
+      "classId": null
+    },
+    {
+      "id": 4,
+      "name": "MathUtils::add",
+      "classId": 2
+    },
+    {
+      "id": 4,
+      "name": "MathUtils::multiply",
+      "classId": 2
+    },
+    {
+      "id": 4,
+      "name": "StringUtils::capitalize",
+      "classId": 2
+    },
+    {
+      "id": 4,
+      "name": "StringUtils::truncate",
+      "classId": 2
+    }
+  ],
+  "calls": [],
+  "components": []
+}
