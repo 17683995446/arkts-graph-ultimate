@@ -1,0 +1,14 @@
+{
+  "name": "ultimate-chaos-test",
+  "version": "1.0.0",
+  "description": "超大规模、超复杂、极端混乱测试项目",
+  "main": "index.ets",
+  "author": "Ultimate Chaos Generator",
+  "metadata": {
+    "complexity_level": "EXTREME",
+    "file_count": 106,
+    "class_count": 3372,
+    "method_count": 152689,
+    "call_count": 2573228
+  }
+}
