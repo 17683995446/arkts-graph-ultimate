@@ -1,0 +1,17 @@
+{
+  "name": "real-enterprise-app",
+  "version": "1.0.0",
+  "description": "真实企业级复杂场景测试项目",
+  "modules": {
+    "user": "用户管理模块",
+    "order": "订单管理模块",
+    "inventory": "库存管理模块",
+    "payment": "支付模块"
+  },
+  "statistics": {
+    "files": 6,
+    "classes": 6,
+    "methods": 56,
+    "calls": 195
+  }
+}
