@@ -115,7 +115,7 @@ this.allKeywordsToSkip = new Set([...this.arkTSUIComponents, ...this.keywordsToS
 
 **仓库信息：**
 - 设置为 private
-- 使用提供的 Token：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
+- 使用提供的 Token：REDACTED_GITHUB_TOKEN
 - 使用提供的邮箱：2358384171@qq.com
 
 **提交内容：**

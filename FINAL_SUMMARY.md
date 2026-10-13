@@ -79,7 +79,7 @@ git push -u origin main
 
 当提示输入用户名和密码时:
 - **用户名**: `2358384171` 或您的 GitHub 用户名
-- **密码/Token**: `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`
+- **密码/Token**: `REDACTED_GITHUB_TOKEN`
 
 ---
 
@@ -89,7 +89,7 @@ git push -u origin main
 
 ```bash
 cd /workspace
-git remote set-url origin https://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@github.com/2358384171/arkts-knowledge-graph.git
+git remote set-url origin https://REDACTED_GITHUB_TOKEN@github.com/2358384171/arkts-knowledge-graph.git
 git push -u origin main
 ```
 

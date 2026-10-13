@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import requests
 
-GITHUB_TOKEN = "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"
+GITHUB_TOKEN = "REDACTED_GITHUB_TOKEN"
 
 print("="*60)
 print("🚀 创建 GitHub 私有仓库...")

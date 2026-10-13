@@ -7,7 +7,7 @@ import urllib.error
 import json
 
 def main():
-    github_token = "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"
+    github_token = "REDACTED_GITHUB_TOKEN"
     repo_owner = "17683995446"
     repo_name = "arkts-graph-ultimate"
     

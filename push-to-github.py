@@ -4,7 +4,7 @@ import requests
 import subprocess
 import sys
 
-GITHUB_TOKEN = "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"
+GITHUB_TOKEN = "REDACTED_GITHUB_TOKEN"
 REPO_NAME = "arkts-knowledge-graph"
 REPO_DESCRIPTION = "ArkTS 代码知识图谱分析系统 - 百万行级，动态更新，基于第一性原理"
 

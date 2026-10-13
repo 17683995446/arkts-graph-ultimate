@@ -11,7 +11,7 @@ import sys
 from pathlib import Path
 
 GITHUB_API_URL = "https://api.github.com"
-TOKEN = "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"
+TOKEN = "REDACTED_GITHUB_TOKEN"
 REPO_NAME = "arkts-graph-ultimate"
 REPO_OWNER = "arkts-graph-user"  # 将根据API确定实际用户名
 
